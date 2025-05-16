@@ -1,6 +1,6 @@
 import OrderForm from "./OrderForm";
 
-export default function POSPanel() {
+export default function POSPanel({ total, onPlaceOrder }) {
   return (
     <div className="bg-cardbg rounded-lg p-6 h-[calc(100vh_-_130px)]">
       <h2 className="text-xl font-bold mb-1">CREATE ORDER</h2>
@@ -8,7 +8,7 @@ export default function POSPanel() {
         Accurately fulfill customer orders based on a precise understanding of
         their requirements.
       </p>
-      <OrderForm />
+      <OrderForm total={total} onPlaceOrder={onPlaceOrder} />
     </div>
   );
 }

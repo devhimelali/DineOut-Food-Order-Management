@@ -1,5 +1,6 @@
+import MinusIcon from "../icons/MinusIcon";
 import PlusIcon from "../icons/PlusIcon";
-export default function Item({ item }) {
+export default function Item({ item, onToggleItem, isSelected }) {
   return (
     <div className="bg-gray-700 bg-opacity-30 rounded-md p-3 mb-3 flex justify-between items-center hover:bg-opacity-40 transition-all duration-300">
       <div className="flex items-center">
@@ -11,9 +12,12 @@ export default function Item({ item }) {
           <p className="text-xs text-gray-400">BDT {item.price}</p>
         </div>
       </div>
-      <button className="w-8 h-8 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300">
-        <PlusIcon />
-        {/* <MinusIcon /> */}
+      <button
+        onClick={() => onToggleItem(item)}
+        type="button"
+        className="w-8 h-8 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
+      >
+        {isSelected ? <MinusIcon /> : <PlusIcon />}
       </button>
     </div>
   );
