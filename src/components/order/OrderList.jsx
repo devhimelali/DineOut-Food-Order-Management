@@ -39,7 +39,7 @@ export default function OrderList({
             </thead>
             <tbody className="text-sm">
               {orderLists && orderLists.length > 0 ? (
-                orderLists.map((order) => (
+                  [...orderLists].reverse().map((order) => (
                   <OrderItem
                     order={order}
                     onDeliveryOrder={onDeliveryOrder}
