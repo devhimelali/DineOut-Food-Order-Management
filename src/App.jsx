@@ -63,6 +63,9 @@ export default function App() {
   }
 
   function handlePlaceOrder(order) {
+    if(order.name === "") return alert("Please enter name")
+    if(order.quantity === 0) return alert("Please enter quantity")
+    if(order.totalAmount === 0) return alert("Please enter price")
     setAllOrders((prev) => [...prev, order]);
     setOrderLists((prev) => [...prev, order]);
   }
