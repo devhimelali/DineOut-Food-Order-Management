@@ -38,14 +38,22 @@ export default function OrderList({
               </tr>
             </thead>
             <tbody className="text-sm">
-              {orderLists.map((order) => (
-                <OrderItem
-                  order={order}
-                  onDeliveryOrder={onDeliveryOrder}
-                  onDeleteOrder={onDeleteOrder}
-                  key={order.id}
-                />
-              ))}
+              {orderLists && orderLists.length > 0 ? (
+                orderLists.map((order) => (
+                  <OrderItem
+                    order={order}
+                    onDeliveryOrder={onDeliveryOrder}
+                    onDeleteOrder={onDeleteOrder}
+                    key={order.id}
+                  />
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6" className="py-3 text-center">
+                    No order found
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
