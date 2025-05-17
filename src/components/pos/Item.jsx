@@ -15,7 +15,7 @@ export default function Item({ item, onToggleItem, isSelected }) {
       <button
         onClick={() => onToggleItem(item)}
         type="button"
-        className="w-8 h-8 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
+        className="cursor-pointer w-8 h-8 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-300"
       >
         {isSelected ? <MinusIcon /> : <PlusIcon />}
       </button>
